@@ -10,7 +10,7 @@ public class BodhiXMLHarness
 
             SQLDatabase database;
 
-            SQLElement circuit01, circuit02, circuit03, circuit04;
+            SQLElement circuit01, circuit02, circuit03, circuit04, circuit05;
 
             //
 
@@ -22,7 +22,9 @@ public class BodhiXMLHarness
 
             circuit03 = bodhi.addElement("//@/circuit03", circuit03 = new SQLCircuit());
 
-            circuit04 = bodhi.addElement("//@/circuit03", circuit04 = new SQLCircuit());
+            circuit04 = bodhi.addElement("//@/circuit04", circuit04 = new SQLCircuit());
+
+            circuit05 = bodhi.addElement("//@/circuit05", circuit05 = new SQLCircuit());
 
             //
 
@@ -36,9 +38,33 @@ public class BodhiXMLHarness
 
             circuit02.addElement("//@/circuit02/@runnable01", new SQLElement());
 
+            circuit02.addElement("//@/circuit02/@runnable02", new SQLElement());
+
+            circuit02.addElement("//@/circuit02/@runnable03", new SQLElement());
+
+            //
+
             circuit03.addElement("//@/circuit03/@runnable01", new SQLElement());
 
+            circuit03.addElement("//@/circuit03/@runnable02", new SQLElement());
+
+            circuit03.addElement("//@/circuit03/@runnable03", new SQLElement());
+
+            //
+
             circuit04.addElement("//@/circuit04/@runnable01", new SQLElement());
+
+            circuit04.addElement("//@/circuit04/@runnable02", new SQLElement());
+
+            circuit04.addElement("//@/circuit04/@runnable03", new SQLElement());
+
+            //
+
+            circuit05.addElement("//@/circuit05/@runnable01", new SQLSocket("@"));
+
+            circuit05.addElement("//@/circuit05/@runnable02", new SQLSocket("@"));
+
+            circuit05.addElement("//@/circuit05/@runnable03", new SQLSocket("@"));
         }
 
         public static class SQLCircuit extends SQLElement
@@ -49,6 +75,19 @@ public class BodhiXMLHarness
         public static class SQLDatabase
         {
 
+        }
+
+        public static class SQLSocket extends SQLElement
+        {
+            public SQLSocket()
+            {
+
+            }
+
+            public SQLSocket(String socket)
+            {
+
+            }
         }
 
         public static class SQLElement
